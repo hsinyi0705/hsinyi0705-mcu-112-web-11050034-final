@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container > a {
+  font-family: "titillium web", sans-serif;
+  font-size: 1.5rem;
+  padding-top: 0;
+  margin-right: 2rem;
+  color: #5cb85c;
+}
+
+.container > ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.container > ul > li {
+  list-style: none;
+  font-family: "source sans pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.3);
+  padding-top: 0.425rem;
+  padding-bottom: 0.425rem;
+  margin-right: 2rem;
+}
