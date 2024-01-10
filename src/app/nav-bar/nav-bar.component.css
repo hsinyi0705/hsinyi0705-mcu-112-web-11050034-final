@@ -1,5 +1,7 @@
 :host {
   display: block;
+  padding: 0 10px;
+  margin: 0;
 }
 
 nav {
@@ -16,6 +18,8 @@ nav {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .container > a {
@@ -31,6 +35,7 @@ nav {
   padding: 0;
   margin: 0;
   list-style: none;
+  gap: 15px;
 }
 
 .container > ul > li > a {
