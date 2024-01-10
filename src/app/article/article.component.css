@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.container {
+  display: flex;
+
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+
+  font-family: source sans pro, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+
+  border: 3px solid red;
+}

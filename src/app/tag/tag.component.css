@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.container {
+  display: block;
+
+  font-family: source sans pro, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+
+  border: 3px solid red;
+}

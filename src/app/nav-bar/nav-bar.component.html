@@ -2,10 +2,18 @@
   <div class="container">
     <a>conduit</a>
     <ul>
-      <li><a>Home</a></li>
-      <li><a>New Article</a></li>
-      <li><a>Sign in</a></li>
-      <li><a>Sign up</a></li>
+      <li><a [routerLink]="['home']" routerLinkActive="active">Home</a></li>
+      <li>
+        <a [routerLink]="['new_article']" routerLinkActive="active"
+          >New Article</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['sign-in']" routerLinkActive="active">Sign in</a>
+      </li>
+      <li>
+        <a [routerLink]="['sign-up']" routerLinkActive="active">Sign up</a>
+      </li>
     </ul>
   </div>
 </nav>
