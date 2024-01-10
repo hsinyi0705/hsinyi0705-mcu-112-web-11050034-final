@@ -42,3 +42,7 @@ nav {
   padding-bottom: 0.425rem;
   margin-right: 2rem;
 }
+
+.container > ul > li :hover {
+  color: rgba(0, 0, 0, 0.6);
+}
