@@ -1,14 +1,15 @@
 :host {
-  display: block;
-}
-
-.container {
-  display: block;
-
+  display: inline-block;
   font-family: source sans pro, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #373a3c;
-
-  border: 3px solid red;
+  font-size: 0.8rem;
+  color: #fff;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.2rem;
+  margin-right: 3px;
+  background: #818a91;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  border-radius: 10rem;
+  cursor: pointer;
 }
