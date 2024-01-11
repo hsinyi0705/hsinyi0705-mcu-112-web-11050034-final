@@ -23,7 +23,7 @@
   border: solid 1px red;
 }
 
-.article-list {
+.article-preview {
   padding-left: 15px;
   padding-right: 15px;
   flex: 0 0 75%;
