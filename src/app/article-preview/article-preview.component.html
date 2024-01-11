@@ -5,27 +5,26 @@
       src="https://api.realworld.io/images/demo-avatar.png"
     />
     <div class="info">
-      <a class="author"> Maksim Esteban </a>
-      <span class="date"> January 4, 2024 </span>
+      <a class="author"> {{ article.author }}</a>
+      <span class="date">
+        {{ article.createDate | date : "MMMM d,yyyy" }}
+      </span>
     </div>
   </div>
-  <app-favorite-button count="30"></app-favorite-button>
+  <app-favorite-button [count]="article.favoriteCount"></app-favorite-button>
 </div>
 
 <div class="content">
   <h1>
-    Ill quantify the redundant TCP bus, that should hard drive the ADP
-    bandwidth!
+    {{ article.title }}
   </h1>
   <p>
-    Aut facilis qui. Cupiditate sit ratione eum sunt rerum impedit. Qui suscipit
-    debitis et et voluptates voluptatem voluptatibus. Quas voluptatum quae
-    corporis corporis possimus.
+    {{ article.content }}
   </p>
 </div>
 
 <div class="footer">
   <span>Read more...</span>
 
-  <app-tag-list className="outline" [tags]="tags"></app-tag-list>
+  <app-tag-list className="outline" [tags]="article.tags"></app-tag-list>
 </div>

@@ -24,8 +24,7 @@ div.editor-page {
 }
 
 .about,
-.your-article,
-.tags {
+.your-article {
   font-family: source sans pro, sans-serif;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
