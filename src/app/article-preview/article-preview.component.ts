@@ -1,11 +1,12 @@
-import { Component, HostBinding } from '@angular/core';
-import { TagComponent } from '../tag/tag.component';
 import { NgFor } from '@angular/common';
+import { Component, HostBinding } from '@angular/core';
+
+import { TagListComponent } from '../tag-list/tag-list.component';
 
 @Component({
   selector: 'app-article-preview',
   standalone: true,
-  imports: [NgFor, TagComponent],
+  imports: [TagListComponent],
   templateUrl: './article-preview.component.html',
   styleUrl: './article-preview.component.css',
 })

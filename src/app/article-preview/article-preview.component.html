@@ -26,7 +26,6 @@
 
 <div class="footer">
   <span>Read more...</span>
-  <div>
-    <app-tag *ngFor="let tag of tags" [name]="tag"></app-tag>
-  </div>
+
+  <app-tag-list [tags]="tags"></app-tag-list>
 </div>
