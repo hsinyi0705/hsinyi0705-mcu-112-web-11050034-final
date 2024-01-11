@@ -15,13 +15,13 @@
   border: solid 1px red;
 }
 
-.container > div.articles {
+.article-list {
   padding-left: 15px;
   padding-right: 15px;
   flex: 0 0 75%;
 }
 
-.container > tag-list {
+.tag-list {
   padding-left: 15px;
   padding-right: 15px;
   flex: 0 0 25%;
