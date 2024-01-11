@@ -45,25 +45,6 @@ span.date {
   font-size: 0.8rem;
 }
 
-button {
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.25;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  border-radius: 0.2rem;
-  color: #5cb85c;
-  background-image: none;
-  background-color: transparent;
-  border-color: #5cb85c;
-}
-
 div.content > h1 {
   font-weight: 600;
   font-size: 1.5rem;
