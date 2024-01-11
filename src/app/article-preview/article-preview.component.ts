@@ -4,11 +4,12 @@ import { Component, HostBinding } from '@angular/core';
 import { TagListComponent } from '../tag-list/tag-list.component';
 import { FavoriteButtonComponent } from '../favorite-button/favorite-button.component';
 import { Article } from '../model/article';
+import { ArticleComponent } from '../article/article.component';
 
 @Component({
   selector: 'app-article-preview',
   standalone: true,
-  imports: [DatePipe, FavoriteButtonComponent, TagListComponent],
+  imports: [ArticleComponent],
   templateUrl: './article-preview.component.html',
   styleUrl: './article-preview.component.css',
 })
