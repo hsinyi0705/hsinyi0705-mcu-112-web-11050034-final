@@ -1,0 +1,29 @@
+{
+  "article": [
+    {
+      "id": 1,
+
+      "title": "Ill quantify the redundant TCP bus, that should hard drive the ADP bandwidth!",
+
+      "content": "Aut facilis qui. Cupiditate sit ratione eum sunt rerum impedit. Qui suscipit\n      debitis et et voluptates voluptatem voluptatibus. Quas voluptatum quae\n      corporis corporis possimus.",
+
+      "favoriteCount": 30,
+
+      "author": "Maksim Esteban",
+
+      "createDate": "2024-07-03T16:00:00.000Z",
+
+      "tags": ["enim", "repellat", "exercitationem", "est"]
+    },
+    {
+      "id": 2,
+      "title": "Ill quantify the redundant TCP bus, that should hard drive the ADP bandwidth!",
+      "content": "Aut facilis qui. Cupiditate sit ratione eum sunt rerum impedit. Qui suscipit\n      debitis et et voluptates voluptatem voluptatibus. Quas voluptatum quae\n      corporis corporis possimus.",
+      "favoriteCount": 30,
+      "author": "Maksim Esteban",
+      "createDate": "2024-07-03T16:00:00.000Z",
+      "tags": ["enim", "repellat", "exercitationem", "est"]
+    }
+  ],
+  "tags": []
+}
