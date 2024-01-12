@@ -16,5 +16,5 @@ export class ArticleListComponent {
   class = 'article-list';
 
   @Input({ required: true })
-  articles!: Article[];
+  articles!: Article[] | null;
 }

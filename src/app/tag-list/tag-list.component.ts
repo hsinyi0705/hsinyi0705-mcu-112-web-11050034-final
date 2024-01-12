@@ -13,7 +13,7 @@ export class TagListComponent {
   @HostBinding('class') class = 'tag-list';
 
   @Input()
-  tags!: string[];
+  tags!: string[] | null;
 
   @Input()
   className!: string;
