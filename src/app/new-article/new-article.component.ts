@@ -1,5 +1,11 @@
 import { NgIf, NgFor } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  inject,
+} from '@angular/core';
 import {
   FormArray,
   FormControl,
@@ -20,10 +26,16 @@ import { ArticleService } from './../services/article.service';
   templateUrl: './new-article.component.html',
   styleUrl: './new-article.component.css',
 })
-export class NewArticleComponent {
+export class NewArticleComponent implements OnChanges {
   private readonly articleService = inject(ArticleService);
 
   private router = inject(Router);
+
+  @Input()
+  id?: string;
+
+  @Input()
+  article!: Article;
 
   readonly form = new FormGroup<INewArticle>({
     title: new FormControl<string | null>(null, {
@@ -65,12 +77,21 @@ export class NewArticleComponent {
     return this.form.get('tags') as FormArray<FormControl<string | null>>;
   }
 
-  onAddTag(): void {
-    this.tags.push(
-      new FormControl<string | null>(null, {
-        validators: [Validators.required],
-      })
-    );
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['article']) {
+      this.onAddTag(this.article?.tags.length);
+      this.form.patchValue(this.article!);
+    }
+  }
+
+  onAddTag(count = 1): void {
+    for (let i = 0; i <= count - 1; i++) {
+      this.tags.push(
+        new FormControl<string | null>(null, {
+          validators: [Validators.required],
+        })
+      );
+    }
   }
 
   onSave(): void {
@@ -84,8 +105,9 @@ export class NewArticleComponent {
       tags: this.tags.value.map((tag) => tag!),
     });
 
-    this.articleService
-      .add(article)
-      .subscribe(() => this.router.navigate(['/']));
+    const action$ = this.id
+      ? this.articleService.update(this.id, article)
+      : this.articleService.add(article);
+    action$.subscribe(() => this.router.navigate(['/']));
   }
 }

@@ -25,6 +25,10 @@ export class ArticleService {
     return this.httpClient.post<Article>(this.url, article);
   }
 
+  update(id: string, article: Article): Observable<Article> {
+    return this.httpClient.put<Article>(`${this.url}/${id}`, article);
+  }
+
   delete(id: string): Observable<Article> {
     return this.httpClient.delete<Article>(`${this.url}/${id}`);
   }

@@ -11,9 +11,14 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
 
   { path: 'home', component: HomePageComponent },
-  { path: 'new_article', component: NewArticleComponent },
   { path: 'sign-in', component: SignInPageComponent },
   { path: 'sign-up', component: SignUpPageComponent },
+  { path: 'new_article', component: NewArticleComponent },
+  {
+    path: 'new_article/:id',
+    component: NewArticleComponent,
+    resolve: { article: articleResolver },
+  },
   {
     path: 'article/content/:id',
     component: ArticleContentPageComponent,

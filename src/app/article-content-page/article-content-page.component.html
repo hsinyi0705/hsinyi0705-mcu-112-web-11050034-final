@@ -7,7 +7,9 @@
         [createDate]="article.createDate"
       ></app-article-meta>
 
-      <button class="edit" type="button">Edit Article</button>
+      <button class="edit" type="button" (click)="onEdit()">
+        Edit Article
+      </button>
       <button class="delete" type="button" (click)="onDelete()">
         Delete Article
       </button>

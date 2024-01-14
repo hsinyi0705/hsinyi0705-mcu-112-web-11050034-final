@@ -23,6 +23,10 @@ export class ArticleContentPageComponent {
   @Input()
   article!: Article;
 
+  onEdit(): void {
+    this.router.navigate(['new_article', this.article.id]);
+  }
+
   onDelete(): void {
     this.articleService
       .delete(this.article.id)
