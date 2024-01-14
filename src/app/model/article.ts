@@ -3,7 +3,7 @@ export class Article {
     Object.assign(this, initData);
   }
 
-  id!: number;
+  id!: string;
 
   title!: string;
 

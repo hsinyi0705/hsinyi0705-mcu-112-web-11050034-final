@@ -17,5 +17,6 @@ export class ArticleComponent {
   @Input({ required: true })
   article!: Article;
 
-  @HostBinding('class') class = 'article';
+  @HostBinding('class')
+  class = 'article';
 }
