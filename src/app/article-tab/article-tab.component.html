@@ -1,10 +1,8 @@
 <ul>
-  <li [class.selected]="selectedItem === 'user'" (click)="onSelect('user')">
+  <li [class.selected]="selectedTab === 'user'" (click)="onSelect('user')">
     Your Feed
   </li>
-  <li [class.selected]="selectedItem === 'global'" (click)="onSelect('global')">
+  <li [class.selected]="selectedTab === 'global'" (click)="onSelect('global')">
     Global Feed
   </li>
 </ul>
-
-<!--pre>{{ selectedItem | json }}</pre-->

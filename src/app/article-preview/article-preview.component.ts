@@ -1,5 +1,6 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, HostBinding, inject } from '@angular/core';
+import { Component, HostBinding, inject, Input } from '@angular/core';
+import { BehaviorSubject, map, switchMap } from 'rxjs';
 
 import { ArticleListComponent } from '../article-list/article-list.component';
 import { ArticleService } from './../services/article.service';
@@ -14,7 +15,23 @@ import { ArticleService } from './../services/article.service';
 export class ArticlePreviewComponent {
   private readonly articleService = inject(ArticleService);
 
-  @HostBinding('class') class = 'article-preview';
+  private readonly author = 'HsinYi';
 
-  articles$ = this.articleService.getList();
+  private authorTarget$ = new BehaviorSubject<'user' | 'global'>('global');
+
+  @Input({ required: true })
+  set authorTarget(value: 'user' | 'global') {
+    this.authorTarget$.next(value);
+  }
+  get authorTarget(): 'user' | 'global' {
+    return this.authorTarget$.value;
+  }
+
+  @HostBinding('class')
+  class = 'article-preview';
+
+  articles$ = this.authorTarget$.pipe(
+    map((target) => (target === 'user' ? this.author : undefined)),
+    switchMap((target) => this.articleService.getList(target))
+  );
 }

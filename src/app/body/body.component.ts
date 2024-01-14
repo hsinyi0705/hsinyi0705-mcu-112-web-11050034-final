@@ -11,4 +11,10 @@ import { TagSidebarComponent } from '../tag-sidebar/tag-sidebar.component';
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
 })
-export class BodyComponent {}
+export class BodyComponent {
+  selectedTab: 'user' | 'global' = 'global';
+
+  onSelectedTabChange(selectedTab: 'user' | 'global'): void {
+    this.selectedTab = selectedTab;
+  }
+}

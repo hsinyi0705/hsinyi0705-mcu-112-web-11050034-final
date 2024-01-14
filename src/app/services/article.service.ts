@@ -11,7 +11,15 @@ export class ArticleService {
 
   private readonly httpClient = inject(HttpClient);
 
-  getList(): Observable<Article[]> {
-    return this.httpClient.get<Article[]>(this.url);
+  /**
+  getListByAuthor(author: string): Observable<Article[]> {
+    return this.httpClient.get<Article[]>(`${this.url}?author=${author}`);
+  }
+  */
+
+  getList(author?: string): Observable<Article[]> {
+    const url = author ? `${this.url}?author=${author}` : this.url;
+
+    return this.httpClient.get<Article[]>(url);
   }
 }

@@ -1,6 +1,6 @@
-<app-article-tab></app-article-tab>
+<app-article-tab [(selectedTab)]="selectedTab"></app-article-tab>
 
 <div class="container">
-  <app-article-preview></app-article-preview>
+  <app-article-preview [authorTarget]="selectedTab"></app-article-preview>
   <app-tag-sidebar></app-tag-sidebar>
 </div>
