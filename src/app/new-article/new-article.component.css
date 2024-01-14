@@ -10,6 +10,13 @@ div.editor-page {
   gap: 20px;
 }
 
+div.error-massage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-left: 10px;
+}
+
 .title {
   font-family: source sans pro, sans-serif;
   padding: 0.75rem 1.5rem;

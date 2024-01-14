@@ -1,20 +1,22 @@
-import { Article } from './../model/article';
-import { ArticleService } from './../services/article.service';
+import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
   FormArray,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { INewArticle } from '../interface/new-article.interface';
-import { Router } from '@angular/router';
+import { Article } from './../model/article';
+import { ArticleService } from './../services/article.service';
 
 @Component({
   selector: 'app-new-article',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [NgIf, ReactiveFormsModule],
   templateUrl: './new-article.component.html',
   styleUrl: './new-article.component.css',
 })
@@ -24,7 +26,9 @@ export class NewArticleComponent {
   private router = inject(Router);
 
   readonly form = new FormGroup<INewArticle>({
-    title: new FormControl<string | null>(null),
+    title: new FormControl<string | null>(null, {
+      validators: [Validators.required],
+    }),
 
     description: new FormControl<string | null>(null),
 

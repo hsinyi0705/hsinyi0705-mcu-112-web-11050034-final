@@ -6,6 +6,10 @@
     formControlName="title"
   />
 
+  <div class="error-massage" *ngIf="title.hasError('required')">
+    請輸入標題內容
+  </div>
+
   <input
     type="text"
     placeholder="What's this article about?"
@@ -23,6 +27,8 @@
   <div class="tags"></div>
 
   <div class="button">
-    <button type="button" (click)="onSave()">Publish Article</button>
+    <button type="button" [disabled]="form.invalid" (click)="onSave()">
+      Publish Article
+    </button>
   </div>
 </div>
