@@ -1,16 +1,8 @@
 <div class="header">
-  <div class="meta">
-    <img
-      alt="author image"
-      src="https://api.realworld.io/images/demo-avatar.png"
-    />
-    <div class="info">
-      <a class="author"> {{ article.author }}</a>
-      <span class="date">
-        {{ article.createDate | date : "MMMM d,yyyy" }}
-      </span>
-    </div>
-  </div>
+  <app-article-meta
+    [author]="article.author"
+    [createDate]="article.createDate"
+  ></app-article-meta>
   <app-favorite-button [count]="article.favoriteCount"></app-favorite-button>
 </div>
 

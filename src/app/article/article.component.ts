@@ -5,11 +5,18 @@ import { FavoriteButtonComponent } from '../favorite-button/favorite-button.comp
 import { TagListComponent } from '../tag-list/tag-list.component';
 import { Article } from './../model/article';
 import { Router, RouterLink } from '@angular/router';
+import { ArticleMetaComponent } from '../article-meta/article-meta.component';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [DatePipe, RouterLink, FavoriteButtonComponent, TagListComponent],
+  imports: [
+    DatePipe,
+    RouterLink,
+    ArticleMetaComponent,
+    FavoriteButtonComponent,
+    TagListComponent,
+  ],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css',
 })

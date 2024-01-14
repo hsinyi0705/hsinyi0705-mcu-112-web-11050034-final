@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1rem;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+  border-radius: 30px;
+}
+
+div.info {
+  display: inline-block;
+  margin: 0 1.5rem 0 0.3rem;
+  vertical-align: middle;
+  line-height: 1rem;
+}
+
+a.author {
+  display: block;
+  font-weight: 500;
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+span.date {
+  display: block;
+  color: #bbb;
+  font-size: 0.8rem;
+}
