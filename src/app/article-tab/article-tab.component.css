@@ -22,13 +22,14 @@ ul > li {
   font-family: source sans pro, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  cursor: pointer;
 }
 
-ul > li:first-child {
+ul > li {
   color: #aaa;
 }
 
-ul > li:last-child {
+ul > li.selected {
   background: #fff;
   border-bottom: 2px solid #5cb85c;
   color: #5cb85c;

@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
 
 @Component({
@@ -8,5 +9,11 @@ import { Component, HostBinding } from '@angular/core';
   styleUrl: './article-tab.component.css',
 })
 export class ArticleTabComponent {
+  selectedItem = 'global';
+
   @HostBinding('class') class = 'article-tab';
+
+  onSelect(target: 'user' | 'global'): void {
+    this.selectedItem = target;
+  }
 }
