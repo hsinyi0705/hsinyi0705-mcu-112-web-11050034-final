@@ -76,7 +76,7 @@ div.footer {
   align-items: center;
 }
 
-div.footer > span {
+div.footer > a {
   max-width: 30%;
   font-size: 0.8rem;
   font-weight: 300;
