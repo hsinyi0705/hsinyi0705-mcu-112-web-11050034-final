@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Article } from './../model/article';
+import { ArticleService } from './../services/article.service';
+import { Component, inject } from '@angular/core';
 import {
   FormArray,
   FormControl,
@@ -7,6 +9,7 @@ import {
 } from '@angular/forms';
 
 import { INewArticle } from '../interface/new-article.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-article',
@@ -16,6 +19,10 @@ import { INewArticle } from '../interface/new-article.interface';
   styleUrl: './new-article.component.css',
 })
 export class NewArticleComponent {
+  private readonly articleService = inject(ArticleService);
+
+  private router = inject(Router);
+
   readonly form = new FormGroup<INewArticle>({
     title: new FormControl<string | null>(null),
 
@@ -38,7 +45,35 @@ export class NewArticleComponent {
     return this.form.get('description') as FormControl<string | null>;
   }
 
+  get content(): FormControl<string | null> {
+    return this.form.get('content') as FormControl<string | null>;
+  }
+
+  get favoriteCount(): FormControl<number> {
+    return this.form.get('favoriteCount') as FormControl<number>;
+  }
+
+  get author(): FormControl<string> {
+    return this.form.get('author') as FormControl<string>;
+  }
+
   get tags(): FormArray<FormControl<string | null>> {
     return this.form.get('tags') as FormArray<FormControl<string | null>>;
+  }
+
+  onSave(): void {
+    const article = new Article({
+      title: this.title.value!,
+      description: this.description.value!,
+      content: this.content.value!,
+      favoriteCount: this.favoriteCount.value,
+      author: this.author.value,
+      createDate: new Date(),
+      tags: this.tags.value.map((tag) => tag!),
+    });
+
+    this.articleService
+      .add(article)
+      .subscribe(() => this.router.navigate(['/']));
   }
 }

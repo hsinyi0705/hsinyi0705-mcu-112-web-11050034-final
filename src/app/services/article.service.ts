@@ -22,4 +22,8 @@ export class ArticleService {
 
     return this.httpClient.get<Article[]>(url);
   }
+
+  add(article?: Article): Observable<Article[]> {
+    return this.httpClient.post<Article[]>(this.url, article);
+  }
 }
