@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+button.active {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
