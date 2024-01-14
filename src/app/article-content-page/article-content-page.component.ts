@@ -1,9 +1,12 @@
+import { routes } from './../app.routes';
+import { ArticleService } from './../services/article.service';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 
 import { Article } from '../model/article';
 import { ArticleMetaComponent } from '../article-meta/article-meta.component';
 import { TagListComponent } from '../tag-list/tag-list.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-content-page',
@@ -13,6 +16,16 @@ import { TagListComponent } from '../tag-list/tag-list.component';
   styleUrl: './article-content-page.component.css',
 })
 export class ArticleContentPageComponent {
+  private readonly articleService = inject(ArticleService);
+
+  private readonly router = inject(Router);
+
   @Input()
   article!: Article;
+
+  onDelete(): void {
+    this.articleService
+      .delete(this.article.id)
+      .subscribe(() => this.router.navigate(['/']));
+  }
 }

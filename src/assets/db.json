@@ -8,7 +8,12 @@
       "favoriteCount": 30,
       "author": "Maksim Esteban",
       "createDate": "2024-07-03T16:00:00.000Z",
-      "tags": ["enim", "repellat", "exercitationem", "est"]
+      "tags": [
+        "enim",
+        "repellat",
+        "exercitationem",
+        "est"
+      ]
     },
     {
       "id": "2",
@@ -18,17 +23,11 @@
       "favoriteCount": 30,
       "author": "HsinYi",
       "createDate": "2024-07-03T16:00:00.000Z",
-      "tags": ["mcu", "angular", "final"]
-    },
-    {
-      "id": "a20b",
-      "title": "新增文章",
-      "description": "新增文章",
-      "content": "最好乖乖跑出來喔",
-      "favoriteCount": 0,
-      "author": "HsinYi",
-      "createDate": "2024-01-14T05:30:16.190Z",
-      "tags": []
+      "tags": [
+        "mcu",
+        "angular",
+        "final"
+      ]
     },
     {
       "id": "40ad",
@@ -38,7 +37,9 @@
       "favoriteCount": 0,
       "author": "HsinYi",
       "createDate": "2024-01-14T06:18:03.764Z",
-      "tags": ["angular"]
+      "tags": [
+        "angular"
+      ]
     }
   ],
   "tags": [
