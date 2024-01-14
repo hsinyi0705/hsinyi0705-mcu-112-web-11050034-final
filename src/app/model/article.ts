@@ -7,6 +7,8 @@ export class Article {
 
   title!: string;
 
+  description!: string;
+
   content!: string;
 
   favoriteCount!: number;

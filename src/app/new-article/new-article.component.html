@@ -1,12 +1,23 @@
-<div class="editor-page">
-  <input type="text" placeholder="Article Title" class="title" />
+<div class="editor-page" [formGroup]="form">
+  <input
+    type="text"
+    placeholder="Article Title"
+    class="title"
+    formControlName="title"
+  />
 
-  <input type="text" placeholder="What's this article about?" class="about" />
+  <input
+    type="text"
+    placeholder="What's this article about?"
+    class="about"
+    formControlName="description"
+  />
 
   <textarea
     rows="8"
     placeholder="Write your article (in markdown)"
     class="your-article"
+    formControlName="content"
   ></textarea>
 
   <div class="tags"></div>
