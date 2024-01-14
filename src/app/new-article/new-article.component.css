@@ -10,7 +10,7 @@ div.editor-page {
   gap: 20px;
 }
 
-div.error-massage {
+.error-massage {
   color: red;
   font-size: 0.9rem;
   margin-top: -10px;
@@ -42,6 +42,42 @@ div.error-massage {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
+}
+
+div.tags button {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+
+  cursor: pointer;
+  border: 1px solid;
+  background-color: #fff;
+
+  padding: 0.5rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+}
+
+div.tags button.add {
+  border: 1px solid;
+  color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+div.tags button.remove {
+  border: 1px solid;
+  color: red;
+  border-color: red;
+  margin-right: 15px;
+}
+
+div.tag {
+  margin-top: 10px;
+}
+
+div.tag input {
+  width: 200px;
 }
 
 div.button {

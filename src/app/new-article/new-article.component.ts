@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
   FormArray,
@@ -16,7 +16,7 @@ import { ArticleService } from './../services/article.service';
 @Component({
   selector: 'app-new-article',
   standalone: true,
-  imports: [NgIf, ReactiveFormsModule],
+  imports: [NgIf, NgFor, ReactiveFormsModule],
   templateUrl: './new-article.component.html',
   styleUrl: './new-article.component.css',
 })
@@ -63,6 +63,14 @@ export class NewArticleComponent {
 
   get tags(): FormArray<FormControl<string | null>> {
     return this.form.get('tags') as FormArray<FormControl<string | null>>;
+  }
+
+  onAddTag(): void {
+    this.tags.push(
+      new FormControl<string | null>(null, {
+        validators: [Validators.required],
+      })
+    );
   }
 
   onSave(): void {

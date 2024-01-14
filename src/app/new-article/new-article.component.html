@@ -24,7 +24,18 @@
     formControlName="content"
   ></textarea>
 
-  <div class="tags"></div>
+  <div class="tags">
+    <button type="button" class="add" (click)="onAddTag()">Add Tags</button>
+    <div class="tag" *ngFor="let control of tags.controls; let index = index">
+      <button type="button" class="remove" (click)="tags.removeAt(index)">
+        Delete
+      </button>
+      <input type="text" [formControl]="control" />
+      <span class="error-massage" *ngIf="control.hasError('required')">
+        請輸入標籤名稱
+      </span>
+    </div>
+  </div>
 
   <div class="button">
     <button type="button" [disabled]="form.invalid" (click)="onSave()">
