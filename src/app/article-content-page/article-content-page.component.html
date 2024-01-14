@@ -1,1 +1,18 @@
-<pre>{{ article | json }}</pre>
+<header>
+  <div class="container">
+    <h1>{{ article.title }}</h1>
+    <div class="meta">
+      <app-article-meta
+        [author]="article.author"
+        [createDate]="article.createDate"
+      ></app-article-meta>
+
+      <button class="edit" type="button">Edit Article</button>
+      <button class="delete" type="button">Delete Article</button>
+    </div>
+  </div>
+</header>
+
+<section class="container">
+  <app-tag-list className="outline" [tags]="article.tags"></app-tag-list>
+</section>

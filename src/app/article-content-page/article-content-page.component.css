@@ -1,0 +1,51 @@
+header {
+  padding: 2rem 0;
+  color: #fff;
+  background: #333;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+div.meta > button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+  background-color: transparent;
+  font-weight: 400;
+  line-height: 1.25;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+div.meta > button.edit {
+  color: #ccc;
+  border-color: #ccc;
+}
+div.meta > button.edit:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+div.meta > button.delete {
+  color: #b85c5c;
+  border-color: #b85c5c;
+}
+div.meta > button.delete:hover {
+  background-color: #b85c5c;
+  color: #fff;
+}
+
+section.container {
+  margin-top: 1.5rem;
+}
