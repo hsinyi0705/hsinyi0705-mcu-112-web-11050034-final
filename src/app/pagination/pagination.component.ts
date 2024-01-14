@@ -36,4 +36,9 @@ export class PaginationComponent implements OnChanges {
     const max = Math.ceil(this.totalCount / this.size);
     this.range = Array.from({ length: max }, (_, i) => i + 1);
   }
+
+  onPageChange(index: number): void {
+    this.index = index;
+    this.indexChange.emit(index);
+  }
 }

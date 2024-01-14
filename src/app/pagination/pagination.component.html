@@ -2,7 +2,7 @@
   type="button"
   [class.active]="index === i"
   *ngFor="let i of range"
-  (click)="indexChange.emit(i)"
+  (click)="onPageChange(i)"
 >
   {{ i }}
 </button>

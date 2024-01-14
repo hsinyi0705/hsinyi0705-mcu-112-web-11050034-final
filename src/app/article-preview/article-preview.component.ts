@@ -45,22 +45,20 @@ export class ArticlePreviewComponent {
 
   totalCount!: number;
 
-  articles$ = merge(
-    this.page$.pipe(tap((data) => console.log(data))),
-    this.authorTarget$
-  ).pipe(
-    tap((data) => console.log(data)),
-    map(() => (this.authorTarget === 'user' ? this.author : undefined)),
+  articles$ = merge(this.page$, this.authorTarget$).pipe(
+    //tap((data) => console.log(data)),
+    //map(() => (this.authorTarget === 'user' ? this.author : undefined)),
     switchMap(() =>
       this.articleService.getList(
         this.authorTarget === 'user' ? this.author : undefined
       )
     ),
     tap((articles) => (this.totalCount = articles.length)),
-    mergeMap((articles) => articles),
+    map((articles) => articles.splice((this.page$.value - 1) * 2, 2))
+    /*mergeMap((articles) => articles),
     skip(2 * (this.page$.value - 1)),
     take(2),
-    toArray()
+    toArray()*/
   );
 
   onPageChange({ size, index }: { size: number; index: number }): void {
