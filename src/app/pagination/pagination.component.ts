@@ -32,6 +32,7 @@ export class PaginationComponent implements OnChanges {
   range: number[] = [];
 
   ngOnChanges(): void {
+    //console.log(this.totalCount);
     const max = Math.ceil(this.totalCount / this.size);
     this.range = Array.from({ length: max }, (_, i) => i + 1);
   }

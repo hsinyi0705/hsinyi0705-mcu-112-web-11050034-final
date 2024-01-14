@@ -1,1 +1,5 @@
-<app-article-list [articles]="articles$ | async"></app-article-list>
+<app-article-list
+  [articles]="articles$ | async"
+  [totalCount]="totalCount"
+  (pageChange)="onPageChange($event)"
+></app-article-list>

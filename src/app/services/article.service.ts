@@ -15,7 +15,13 @@ export class ArticleService {
     return this.httpClient.get<Article>(`${this.url}/${id}`);
   }
 
-  getList(author?: string): Observable<Article[]> {
+  getList(
+    //pager: { size: number; index: number },
+    author?: string
+  ): Observable<Article[]> {
+    //const start = (pager.index - 1) * pager.size;
+    //let url = `${this.url}?_start=${start}&_limit=${pager.size}`;
+
     const url = author ? `${this.url}?author=${author}` : this.url;
 
     return this.httpClient.get<Article[]>(url);

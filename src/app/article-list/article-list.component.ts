@@ -1,4 +1,10 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  Output,
+} from '@angular/core';
 
 import { ArticleComponent } from '../article/article.component';
 import { Article } from '../model/article';
@@ -18,4 +24,16 @@ export class ArticleListComponent {
 
   @Input({ required: true })
   articles!: Article[] | null;
+
+  @Input()
+  totalCount!: number;
+
+  @Output()
+  pageChange = new EventEmitter<{ size: number; index: number }>();
+
+  size = 2;
+
+  onPageChange(index: number): void {
+    this.pageChange.emit({ size: this.size, index });
+  }
 }

@@ -1,6 +1,17 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, HostBinding, inject, Input } from '@angular/core';
-import { BehaviorSubject, map, switchMap } from 'rxjs';
+import {
+  BehaviorSubject,
+  combineLatest,
+  map,
+  merge,
+  mergeMap,
+  skip,
+  switchMap,
+  take,
+  tap,
+  toArray,
+} from 'rxjs';
 
 import { ArticleListComponent } from '../article-list/article-list.component';
 import { ArticleService } from './../services/article.service';
@@ -27,11 +38,33 @@ export class ArticlePreviewComponent {
     return this.authorTarget$.value;
   }
 
+  page$ = new BehaviorSubject<number>(1);
+
   @HostBinding('class')
   class = 'article-preview';
 
-  articles$ = this.authorTarget$.pipe(
-    map((target) => (target === 'user' ? this.author : undefined)),
-    switchMap((target) => this.articleService.getList(target))
+  totalCount!: number;
+
+  articles$ = merge(
+    this.page$.pipe(tap((data) => console.log(data))),
+    this.authorTarget$
+  ).pipe(
+    tap((data) => console.log(data)),
+    map(() => (this.authorTarget === 'user' ? this.author : undefined)),
+    switchMap(() =>
+      this.articleService.getList(
+        this.authorTarget === 'user' ? this.author : undefined
+      )
+    ),
+    tap((articles) => (this.totalCount = articles.length)),
+    mergeMap((articles) => articles),
+    skip(2 * (this.page$.value - 1)),
+    take(2),
+    toArray()
   );
+
+  onPageChange({ size, index }: { size: number; index: number }): void {
+    //console.log(index);
+    this.page$.next(index);
+  }
 }
